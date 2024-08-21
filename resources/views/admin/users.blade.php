@@ -17,9 +17,9 @@
         </div>-->
         <div class="mb-4">
             <div>
-                <a class="btn btn-primary m-3 disabled" href="#" role="button" >Ajouter</a>
+                <a class="btn btn-primary m-3" href="{{ route('admin.user.create') }}" role="button" >Ajouter</a>
             </div>
-            <div table-responsive">
+            <div table-responsive>
                 <table class="table table-hover">
                     <thead>
                         <tr>
@@ -47,7 +47,12 @@
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="{{ route('admin.user.show', ['id' => $user->id]) }}">Voir</a></li>
                                         <li><a class="dropdown-item" href="{{ route('admin.user.edit', ['id' => $user->id]) }}">Modifier</a></li>
-                                        <li><a class="dropdown-item" href="#">Supprimer</a></li>
+                                        <li><button type="button" class="dropdown-item" onclick="if(confirm('Êtes-vous sûr de vouloir supprimer ce client?')) { document.getElementById('delete-form').submit(); }">Supprimer</button>
+                                            <form id="delete-form" action="{{ route('admin.user.destroy', ['id' => $user->id]) }}" method="POST" style="display: none;">
+                                                @csrf
+                                                @method('DELETE')
+                                            </form>
+                                        </li>
                                     </ul>
                                 </div>
                             </td>

@@ -1,46 +1,37 @@
-# Car Rental Platform
+ <!--  creer la base de donnée dans phpadmin mysql-->
+ create dadabase car_rent;
 
-Cardex is a comprehensive car rental platform designed to simplify the process of renting cars. This repository contains the code for the website and administration panel built using Laravel and Bootstrap respectively.
+ <!-- reintialiser composer -->
+ **composer update**
+ **composer install**
 
-## Screenshots
-![Cardex1](./imgs/cardex1.png)
-![Cardex2](./imgs/cardex2.png)
-![Cardex3](./imgs/cardex3.png)
+s'il y a une erreur par rapport a la version de php, aller dans le ficher  **composer.json** **composer.lock** et  et modifier la version de php 
 
-## Features
+"require-dev": {
+    "phpunit/phpunit": "^10.0" //derniere version
+}
 
-### User-Facing Website
+<!-- vider les caches -->
+**php artisan optimize:clear**
+**php artisan config:clear**
+**php artisan cache:clear**
+**php artisan route:clear**
+**php artisan view:clear**
+**php artisan storage:link**
 
-- User registration and authentication.
-- Browse and search available cars.
-- Filter cars by location, date, and other specifications.
-- Make online reservations and manage bookings.
-- View rental history and invoices.
+**php artisan make:model Marque -m**
+**php artisan make:migration add_marque_id_to_cars_table --table=cars**
+**php artisan make:controller MarqueController**
+**composer dump-autoload**
+<!-- faire les migrations -->
+**php artisan migrate:reset** //reinitialiser
+**php artisan migrate**
 
-### Administration Panel
+<!-- faire les verification -->
+aller dans le ficher **.env** et vérifier le username et mot de passe de la base de donné (defaut: username= 'root', password='')
 
-- Secure login for administrators.
-- Manage car listings, including creation, editing, and deletion.
-- Track and manage car availability and reservations.
+<!-- lancer le server sur le localhost -->
+**php artisan serve** and enjoy🎉🎉🎉
 
-## Getting Started
 
-To set up and run Cardex on your local machine, follow these steps:
-
-1. Clone this repository to your local machine.
-2. Configure your development environment (e.g., PHP, MySQL).
-3. Create a new MySQL database for Cardex.
-4. Copy the `.env.example` file and rename it to `.env`. Update the necessary configuration variables, including the database credentials.
-5. Install the project dependencies by running `composer install`.
-6. Generate an application key by running `php artisan key:generate`.
-7. Run the database migrations using `php artisan migrate`.
-9. Start the development server using `php artisan serve`.
-10. Access the Cardex website and administration panel by visiting `http://localhost:8000` and `http://localhost:8000/admin` respectively.
-
-## License
-
-Cardex is released under the [MIT License](LICENSE). You are free to use, modify, and distribute this project for personal or commercial purposes.
-
-## Acknowledgments
-
-We would like to extend our gratitude to the Laravel and Bootstrap communities for their fantastic frameworks that made developing Cardex a delightful experience.
+---------------------------------------------- junior the Dev --------------------------------------

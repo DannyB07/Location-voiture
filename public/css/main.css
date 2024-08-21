@@ -48,6 +48,31 @@ Primary use:	Waydex HTML Template
 /*==============================
 	Common styles
 ==============================*/
+.car__status-container {
+  display: flex;
+  justify-content: space-between; /* Écarte les éléments de chaque côté */
+  align-items: center; /* Aligne les éléments verticalement au centre */
+  width: 100%; /* Assure que le conteneur occupe toute la largeur disponible */
+}
+
+.car__status {
+  /* Vos styles pour le statut ici */
+}
+
+.car__more {
+  /* Vos styles pour le lien de réservation ici */
+}
+
+.available {
+  color: green;
+  font-weight: bold;
+}
+
+.unavailable {
+  color: red;
+  font-weight: bold;
+}
+
 html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2634,6 +2659,16 @@ body::-webkit-scrollbar-thumb {
   color: #33334f;
   font-weight: 400;
   font-family: 'Nunito', sans-serif;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.sign__group input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.sign__group label {
+  margin-left: 5px;
 }
 .offer__list-value {
   font-size: 14px;

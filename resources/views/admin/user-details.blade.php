@@ -1,4 +1,6 @@
+
 @extends('admin.layouts.master')
+
 
 @section('title', "Voir {{ $user->first_name.' '.$user->last_name }}")
 
@@ -84,3 +86,4 @@
     </div>
 </main>
 @endsection
+

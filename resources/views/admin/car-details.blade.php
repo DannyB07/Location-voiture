@@ -52,7 +52,7 @@
                     <div class="row mt-3">
                         <div class="col-md-12">
                             <div class="text-center">
-                                <a type="button" class="btn btn-primary mr-2 disabled" href="{{ route('admin.car.edit', ['id' => $car->id]) }}">Modifier</a>
+                                <a type="button" class="btn btn-primary mr-2" href="{{ route('admin.car.edit', ['id' => $car->id]) }}">Modifier</a>
                                 <button type="button" class="btn btn-danger" onclick="if(confirm('Êtes-vous sûr de vouloir supprimer cette voiture?')) { document.getElementById('delete-form').submit(); }">Supprimer</button>
                                 <form id="delete-form" action="{{ route('admin.car.destroy', ['id' => $car->id]) }}" method="POST" style="display: none;">
                                     @csrf

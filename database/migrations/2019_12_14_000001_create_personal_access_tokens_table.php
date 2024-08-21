@@ -13,13 +13,18 @@ return new class extends Migration
     {
         Schema::create('personal_access_tokens', function (Blueprint $table) {
             $table->id();
-            $table->morphs('tokenable');
             $table->string('name');
-            $table->string('token', 64)->unique();
-            $table->text('abilities')->nullable();
-            $table->timestamp('last_used_at')->nullable();
+            $table->string('token', 191); // Assurez-vous que la longueur est correcte
+            $table->string('tokenable_type', 100); // Réduire la longueur
+            $table->bigInteger('tokenable_id')->unsigned();
+            $table->timestamp('created_at')->nullable();
             $table->timestamp('expires_at')->nullable();
-            $table->timestamps();
+
+            // Définir une contrainte unique sur token
+            $table->unique('token');
+
+            // Utiliser une longueur plus courte pour le champ composite
+            $table->index(['tokenable_type', 'tokenable_id']);
         });
     }
 

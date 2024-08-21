@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('admins', function (Blueprint $table) {
             $table->id();
-            $table->string('username');
             $table->string('fullname');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->rememberToken();
+            $table->string('first_name')->default('admin');
+            $table->string('last_name')->default('admin');;
+            $table->string('username', 191)->unique(); // Limite la longueur à 191 caractères
+            $table->string('email', 191)->unique();    // Limite la longueur à 191 caractères
+            $table->string('password')->default('12345678');;
             $table->timestamps();
         });
     }

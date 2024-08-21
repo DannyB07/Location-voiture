@@ -18,11 +18,45 @@
         @if (session('success'))
             <div class="alert alert-success">{{ session('success') }}</div>
         @endif
+        <style>
+            /* Animation de brillance multicolore */
+            @keyframes shine {
+                0% {
+                    text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000, 0 0 20px #ff0000, 0 0 25px #ff0000, 0 0 30px #ff0000, 0 0 35px #ff0000;
+                    color: #ff0000;
+                }
+                25% {
+                    text-shadow: 0 0 5px #ff8c00, 0 0 10px #ff8c00, 0 0 15px #ff8c00, 0 0 20px #ff8c00, 0 0 25px #ff8c00, 0 0 30px #ff8c00, 0 0 35px #ff8c00;
+                    color: #ff8c00;
+                }
+                50% {
+                    text-shadow: 0 0 5px #ffff00, 0 0 10px #ffff00, 0 0 15px #ffff00, 0 0 20px #ffff00, 0 0 25px #ffff00, 0 0 30px #ffff00, 0 0 35px #ffff00;
+                    color: #ffff00;
+                }
+                75% {
+                    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00, 0 0 20px #00ff00, 0 0 25px #00ff00, 0 0 30px #00ff00, 0 0 35px #00ff00;
+                    color: #00ff00;
+                }
+                100% {
+                    text-shadow: 0 0 5px #0000ff, 0 0 10px #0000ff, 0 0 15px #0000ff, 0 0 20px #0000ff, 0 0 25px #0000ff, 0 0 30px #0000ff, 0 0 35px #0000ff;
+                    color: #0000ff;
+                }
+            }
+
+            /* Appliquer l'animation */
+            .shiny-icon {
+                display: inline-block;
+                animation: shine 4s infinite alternate;
+                font-size: 18px; /* Ajustez la taille de l'icône ici */
+            }
+        </style>
+
+
         <div class="mb-4">
             <div>
-                <a class="btn btn-primary m-3" href="{{ route('admin.car.create') }}" role="button">Ajouter</a>
+                <a class="btn btn-primary m-3" href="{{ route('admin.car.create') }}" role="button"><i class="fas fa-plus shiny-icon"></i>Ajouter une voiture</a>
             </div>
-            <div table-responsive">
+            <div table-responsive>
                 <table class="table table-hover">
                     <thead>
                         <tr>
@@ -43,21 +77,13 @@
                             <td>{{ $car->daily_rate }}</td>
                             <td>{{ $car->available ? 'Vrai' : 'Faux' }}</td>
                             <td>
-                                <div class="dropdown open">
-                                    <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Options
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="{{ route('admin.car.show', ['id' => $car->id]) }}">Voir</a></li>
-                                        <li><a class="dropdown-item disabled" href="{{ route('admin.car.edit', ['id' => $car->id]) }}">Modifier</a></li>
-                                        <li><button type="button" class="dropdown-item" onclick="if(confirm('Êtes-vous sûr de vouloir supprimer cette voiture?')) { document.getElementById('delete-form').submit(); }">Supprimer</button>
-                                            <form id="delete-form" action="{{ route('admin.car.destroy', ['id' => $car->id]) }}" method="POST" style="display: none;">
+                                        <a class="btn btn-sm btn-info rounded-pill" href="{{ route('admin.car.show', ['id' => $car->id]) }}"> <i class="fas fa-eye"></i></a>
+                                        <a class="btn btn-sm btn-warning rounded-pill" href="{{ route('admin.car.edit', ['id' => $car->id]) }}"><i class="fas fa-edit"></i></a>
+                                            <form action="{{ route('admin.car.destroy', ['id' => $car->id]) }}" method="POST" style="display: inline;">
                                                 @csrf
                                                 @method('DELETE')
+                                                <button type="submit" class="btn btn-sm btn-danger rounded-pill" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette marque?');"><i class="fas fa-trash"></i></button>
                                             </form>
-                                        </li>
-                                    </ul>
-                                </div>
                             </td>
                         </tr>
                         @endforeach

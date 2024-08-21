@@ -61,7 +61,7 @@
                         <div class="form-group row">
                             <div class="col-sm-3"></div>
                             <div class="col-sm-9">
-                                <button type="submit" class="btn btn-primary mr-2" disabled>Enregistrer</button>
+                                <button type="submit" class="btn btn-primary mr-2">Enregistrer</button>
                                 <button type="button" class="btn btn-secondary" >Annuler</button>
                             </div>
                         </div>
