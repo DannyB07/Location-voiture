@@ -82,7 +82,7 @@
                                             <form action="{{ route('admin.car.destroy', ['id' => $car->id]) }}" method="POST" style="display: inline;">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-sm btn-danger rounded-pill" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette marque?');"><i class="fas fa-trash"></i></button>
+                                                <button type="submit" class="btn btn-sm btn-danger rounded-pill" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette voiture?');"><i class="fas fa-trash"></i></button>
                                             </form>
                             </td>
                         </tr>

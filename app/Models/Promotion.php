@@ -17,9 +17,14 @@ class Promotion extends Model
     ];
 
 
-    public function vehicule()
+    public function Car()
     {
         return $this->belongsTo(Car::class);
+    }
+
+    public function marque()
+    {
+        return $this->belongsTo(Marque::class);
     }
 
     public function isValid()

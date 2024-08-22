@@ -58,7 +58,7 @@
                                 <select class="form-control" id="car_id" name="car_id" required>
                                     <option value="">--- Choisir ---</option>
                                     @foreach($cars as $car)
-                                    <option value="{{ $car->id }}">{{ $car->marque }} {{ $car->modele }}</option>
+                                    <option value="{{ $car->id }}">{{ $car->brand }} - {{ $car->model }}</option>
                                 @endforeach
                                 </select>
                             </div>
@@ -66,6 +66,7 @@
                         <div class="form-group row my-4">
                             <div class="col-sm-12 text-center">
                                 <button type="submit" class="btn btn-primary">Créer</button>
+                                <button type="button" class="btn btn-secondary" onclick="window.history.back()" >Annuler</button>
                             </div>
                         </div>
                     </form>

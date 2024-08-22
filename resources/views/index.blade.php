@@ -20,7 +20,7 @@
               <label for="marque">Marque</label>
               <input type="text" name="brand" id="marque" placeholder="Quelle marque cherchez vous?" required>
             </div>
-            
+
             <div class="home__group">
               <label for="model">Model</label>
               <input type="text" name="model" id="model" placeholder="Quel model desirez vous ?" required>
@@ -115,7 +115,39 @@
                     </svg>
                     <span>{{ $car->transmission_type }}</span>
                 </li>
+
+
+                @foreach ($promotions as $promotion)
+                @if ($promotion->car_id == $car->id)
+                <ul class="car__list">
+                    <li>
+                        <h4>Promotion</h4>
+                    </li>
+                </ul>
+
+                <ul class="car__list">
+                    <li>
+                        <strike><span> {{ intval($car->daily_rate) }} FCFA</span></strike>
+                    </li>
+                </ul>
+                <ul class="car__list">
+                    <li>
+                        <span>{{ intval($promotion->montant_reduction) }} FCFA</span>
+                    </li>
+                </ul>
+                <ul class="car__list">
+                    <li>
+                        <span class="car__year">{{ intval($car->daily_rate - $promotion->montant_reduction) }} FCFA</span>
+                    </li>
+                </ul>
+
+
+
+                @endif
+                @endforeach
+                <!-- End Promotions -->
             </ul>
+
             <div class="car__status-container">
                 <span class="car__status {{ $car->available == 1 ? 'available' : 'unavailable' }}">
                     {{ $car->available == 1 ? 'Disponible' : 'En location' }}
@@ -133,6 +165,10 @@
         </div>
     </div>
     <!-- end car -->
+
+
+  <!-- end promotions -->
+
     @endforeach
 </section>
 

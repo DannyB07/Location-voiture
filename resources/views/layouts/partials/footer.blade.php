@@ -35,7 +35,7 @@
               </svg></a>
           </div>
           -->
-          <small class="footer__copyright">© Cardex, 2023</small>
+          <small class="footer__copyright">© CarFlex Agency, 2024</small>
         </div>
       </div>
     </div>

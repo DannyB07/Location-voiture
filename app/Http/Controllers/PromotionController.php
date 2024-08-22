@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Promotion;
@@ -8,31 +7,33 @@ use Illuminate\Http\Request;
 
 class PromotionController extends Controller
 {
+
+  
+    // Affiche une liste paginée des promotions
     public function index()
     {
-        // Affiche une liste paginée des promotions
-        $promotions = Promotion::paginate(20);
+        $promotions = Promotion::with('car.marque')->paginate(20);
         return view('admin.promotions-index', compact('promotions'));
     }
 
+    // Affiche le formulaire de création de promotion
     public function create()
     {
-        // Récupère la liste des voitures pour le formulaire de création
-        $cars = Car::all();
+        $cars = Car::with('marque')->get();
         return view('admin.promotions-create', compact('cars'));
     }
 
+    // Stocke une nouvelle promotion
     public function store(Request $request)
     {
-        // Valide les données du formulaire
         $request->validate([
-            'code' => 'required|string|max:255',
-            'montant_reduction' => 'required|numeric',
-            'date_limite' => 'required|date',
+            'code' => 'required|string|max:255|unique:promotions,code',
+            'montant_reduction' => 'required|numeric|min:0',
+            'date_limite' => 'required|date|after:today',
             'car_id' => 'required|exists:cars,id',
         ]);
 
-        // Crée une nouvelle promotion
+        // Crée la promotion sans appliquer immédiatement la réduction
         Promotion::create([
             'code' => $request->input('code'),
             'montant_reduction' => $request->input('montant_reduction'),
@@ -40,29 +41,27 @@ class PromotionController extends Controller
             'car_id' => $request->input('car_id'),
         ]);
 
-        // Redirige vers la liste des promotions avec un message de succès
-        return redirect()->route('admin.promotions.index')->with('success', 'Promotion créée avec succès');
+        return redirect()->route('admin.promotions.index')->with('success', 'Promotion créée avec succès.');
     }
 
+    // Affiche le formulaire d'édition de promotion
     public function edit($id)
     {
-        // Récupère la promotion par son ID et affiche le formulaire d'édition
-        $promotion = Promotion::findOrFail($id);
-        $cars = Car::all();
+        $promotion = Promotion::with('car.marque')->findOrFail($id);
+        $cars = Car::with('marque')->get();
         return view('admin.promotions-edit', compact('promotion', 'cars'));
     }
 
+    // Met à jour une promotion existante
     public function update(Request $request, $id)
     {
-        // Valide les données du formulaire
         $request->validate([
-            'code' => 'required|string|max:255',
-            'montant_reduction' => 'required|numeric',
-            'date_limite' => 'required|date',
+            'code' => 'required|string|max:255|unique:promotions,code,'.$id,
+            'montant_reduction' => 'required|numeric|min:0',
+            'date_limite' => 'required|date|after:today',
             'car_id' => 'required|exists:cars,id',
         ]);
 
-        // Récupère la promotion par son ID et met à jour ses informations
         $promotion = Promotion::findOrFail($id);
         $promotion->update([
             'code' => $request->input('code'),
@@ -71,17 +70,42 @@ class PromotionController extends Controller
             'car_id' => $request->input('car_id'),
         ]);
 
-        // Redirige vers la liste des promotions avec un message de succès
-        return redirect()->route('admin.promotions.index')->with('success', 'Promotion modifiée avec succès');
+        return redirect()->route('admin.promotions.index')->with('success', 'Promotion mise à jour avec succès.');
     }
 
+    // Supprime une promotion existante
     public function destroy($id)
     {
-        // Récupère la promotion par son ID et la supprime
         $promotion = Promotion::findOrFail($id);
         $promotion->delete();
 
-        // Redirige vers la liste des promotions avec un message de succès
-        return redirect()->route('admin.promotion.index')->with('success', 'Promotion supprimée avec succès');
+        return redirect()->route('admin.promotions.index')->with('success', 'Promotion supprimée avec succès.');
+    }
+
+    // Appliquer le code promotionnel lors de la location
+    public function applyPromotion(Request $request, $carId)
+    {
+        $request->validate([
+            'code' => 'required|string|exists:promotions,code',
+        ]);
+
+        $promotion = Promotion::where('code', $request->code)
+                              ->where('car_id', $carId)
+                              ->where('date_limite', '>=', now())
+                              ->first();
+
+        if ($promotion) {
+            $car = Car::findOrFail($carId);
+            $newDailyRate = $car->daily_rate - $promotion->montant_reduction;
+
+            if ($newDailyRate < 0) {
+                return response()->json(['success' => false, 'message' => 'La remise ne peut pas être supérieure au prix journalier.']);
+            }
+
+            return response()->json(['success' => true, 'new_rate' => $newDailyRate]);
+        }
+
+        return response()->json(['success' => false, 'message' => 'Code promotionnel invalide ou expiré.']);
     }
 }
+

@@ -25,27 +25,38 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>Code</th>
-                                <th>Montant de la remise (%)</th>
-                                <th>Date limite</th>
-                                <th>Véhicule</th>
-                                <th>Actions</th>
+
+                                    <th>#</th>
+                                    <th>Code</th>
+                                    <th>Montant Réduction (%)</th>
+                                    <th>Date Limite</th>
+                                    <th>Voiture</th>
+                                    <th>Actions</th>
+
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($promotions as $promotion)
                             <tr>
+                                <td>{{ $promotion->id }}</td>
                                 <td>{{ $promotion->code }}</td>
-                                <td>{{ $promotion->montant_reduction }}%</td>
-                                <td>{{ $promotion->date_limite->format('d/m/Y') }}</td>
-                                <td>{{ $promotion->car->marque }} {{ $promotion->car->modele }}</td>
+                                <td>{{ $promotion->montant_reduction }}</td>
+                                <td>{{ $promotion->date_limite }}</td>
                                 <td>
-                                    <a href="{{ route('admin.promotions.show', $promotion->id) }}" class="btn btn-info btn-sm">Voir</a>
-                                    <a href="{{ route('admin.promotions.edit', $promotion->id) }}" class="btn btn-warning btn-sm">Modifier</a>
+                                    @if($promotion->car && $promotion->car->marque)
+                                    {{ $promotion->car->marque->name }} - {{ $promotion->car->model }}
+                                @elseif($promotion->car)
+                                    {{ 'Marque inconnue' }} - {{ $promotion->car->model }}
+                                @else
+                                    {{ 'Voiture inconnue' }}
+                                @endif
+                                </td>
+                                <td>
+                                    <a href="{{ route('admin.promotions.edit', $promotion->id) }}" class="btn btn-warning rounded-pill btn-sm"><i class="fas fa-edit"></i></a>
                                     <form action="{{ route('admin.promotions.destroy', $promotion->id) }}" method="POST" style="display:inline-block;">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette promotion ?')">Supprimer</button>
+                                        <button type="submit" class="btn btn-danger rounded-pill btn-sm" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette promotion ?')"><i class="fas fa-trash"></i></button>
                                     </form>
                                 </td>
                             </tr>

@@ -11,6 +11,7 @@
     <link href="{{ asset('dashboard/css/styles.css') }}" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ asset('lib/bootstrap/css/bootstrap.min.css') }}">
+    
 </head>
 
 <body>
@@ -69,6 +70,7 @@
                             Promotions
                         </a>
 
+
                     </div>
                 </div>
                 <div class="sb-sidenav-footer">
@@ -84,7 +86,7 @@
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid px-4">
                     <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Cardex 2023</div>
+                        <div class="text-muted">Copyright &copy; CarFlex Agency 2024</div>
                     </div>
                 </div>
             </footer>
