@@ -34,4 +34,4 @@ aller dans le ficher **.env** et vérifier le username et mot de passe de la bas
 **php artisan serve** and enjoy🎉🎉🎉
 
 
----------------------------------------------- junior the Dev --------------------------------------
+---------------------------------------------- Daniel the Dev --------------------------------------
