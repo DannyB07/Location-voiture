@@ -28,7 +28,7 @@
 
                                     <th>#</th>
                                     <th>Code</th>
-                                    <th>Montant Réduction (%)</th>
+                                    <th>Montant Réduction</th>
                                     <th>Date Limite</th>
                                     <th>Voiture</th>
                                     <th>Actions</th>
@@ -42,14 +42,7 @@
                                 <td>{{ $promotion->code }}</td>
                                 <td>{{ $promotion->montant_reduction }}</td>
                                 <td>{{ $promotion->date_limite }}</td>
-                                <td>
-                                    @if($promotion->car && $promotion->car->marque)
-                                    {{ $promotion->car->marque->name }} - {{ $promotion->car->model }}
-                                @elseif($promotion->car)
-                                    {{ 'Marque inconnue' }} - {{ $promotion->car->model }}
-                                @else
-                                    {{ 'Voiture inconnue' }}
-                                @endif
+                                <td> {{ $promotion->car->brand }}  {{ $promotion->car->model }}
                                 </td>
                                 <td>
                                     <a href="{{ route('admin.promotions.edit', $promotion->id) }}" class="btn btn-warning rounded-pill btn-sm"><i class="fas fa-edit"></i></a>

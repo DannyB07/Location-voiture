@@ -3,6 +3,12 @@
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PromotionController;
+use App\Http\Controllers\MarqueController;
+use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\AgenceController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\DashboardController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -33,40 +39,76 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
 
 
 
-// Route pour afficher la liste des promotions
-Route::prefix('admin')->name('admin.')->group(function () {
-Route::get('/promotions', [PromotionController::class, 'index'])->name('promotions.index');
+    // Route pour afficher la liste des promotions
+    Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('/promotions', [PromotionController::class, 'index'])->name('promotions.index');
 
-// Route pour afficher le formulaire de création d'une nouvelle promotion
-Route::get('/promotions/create', [PromotionController::class, 'create'])->name('promotions.create');
+    // Route pour afficher le formulaire de création d'une nouvelle promotion
+    Route::get('/promotions/create', [PromotionController::class, 'create'])->name('promotions.create');
 
-// Route pour enregistrer une nouvelle promotion
-Route::post('/promotions', [PromotionController::class, 'store'])->name('promotions.store');
+    // Route pour enregistrer une nouvelle promotion
+    Route::post('/promotions', [PromotionController::class, 'store'])->name('promotions.store');
 
-// Route pour afficher les détails d'une promotion spécifique
-Route::get('/promotions/{promotion}', [PromotionController::class, 'show'])->name('promotions.show');
+    // Route pour afficher les détails d'une promotion spécifique
+    Route::get('/promotions/{promotion}', [PromotionController::class, 'show'])->name('promotions.show');
 
-// Route pour afficher le formulaire d'édition d'une promotion
-Route::get('/promotions/{promotion}/edit', [PromotionController::class, 'edit'])->name('promotions.edit');
+    // Route pour afficher le formulaire d'édition d'une promotion
+    Route::get('/promotions/{promotion}/edit', [PromotionController::class, 'edit'])->name('promotions.edit');
 
-// Route pour mettre à jour une promotion
-Route::put('/promotions/{promotion}', [PromotionController::class, 'update'])->name('promotions.update');
+    // Route pour mettre à jour une promotion
+    Route::put('/promotions/{promotion}', [PromotionController::class, 'update'])->name('promotions.update');
 
-// Route pour supprimer une promotion
-Route::delete('/promotions/{promotion}', [PromotionController::class, 'destroy'])->name('promotions.destroy');
-});
+    // Route pour supprimer une promotion
+    Route::delete('/promotions/{promotion}', [PromotionController::class, 'destroy'])->name('promotions.destroy');
+    });
 
-Route::prefix('admin')->name('admin.')->group(function () {
+    Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('promotions', PromotionController::class);
-});
+    });
 
 
-    
+    // Agence
+
+    // Route pour afficher la liste des agences
+    Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('/agences', [AgenceController::class, 'index'])->name('agences.index');
+
+    // Route pour afficher le formulaire de création d'une nouvelle promotion
+    Route::get('/agences/create', [AgenceController::class, 'create'])->name('agences.create');
+
+    // Route pour enregistrer une nouvelle promotion
+    Route::post('/agences', [AgenceController::class, 'store'])->name('agences.store');
+
+    // Route pour afficher les détails d'une promotion spécifique
+    Route::get('/agences/{agence}', [AgenceController::class, 'show'])->name('agences.show');
+
+    // Route pour afficher le formulaire d'édition d'une promotion
+    Route::get('/agences/{agence}/edit', [AgenceController::class, 'edit'])->name('agences.edit');
+
+    // Route pour mettre à jour une promotion
+    Route::put('/agences/{agence}', [AgenceController::class, 'update'])->name('agences.update');
+
+    // Route pour supprimer une promotion
+    Route::delete('/agences/{agence}', [AgenceController::class, 'destroy'])->name('agences.destroy');
+    });
+
+    Route::prefix('admin')->name('admin.')->group(function () {
+        Route::resource('agence', AgenceController::class);
+    });
+
+
+
+
+
+
 
     // Car(s) routes
     Route::get('/voitures', 'CarController@index')->name('car.index');
     Route::get('/voitures/{id}', 'CarController@show')->name('car.show');
     Route::get('/voitures/reservation/{id}', 'CarController@reservation_show')->name('car.reservation_show');
+
+
+
 
     //reservation
     Route::post('/reservation/store/{id}', [ReservationController::class, 'store'])->name('reservation.store');
@@ -75,6 +117,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     // Contact route
     Route::view('/contacts', 'contacts')->name('contacts.show');
+    Route::get('/contacts', [ContactController::class, 'index'])->name('contacts.index');
+
 
     Route::group(['middleware' => ['guest']], function () {
         // Register routes
@@ -116,6 +160,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
             // Admin home
             Route::view('/', 'admin.index')->name('admin.home');
+            Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 
             //Admin cars
             Route::get('/voitures', 'CarController@index')->name('admin.car.index');

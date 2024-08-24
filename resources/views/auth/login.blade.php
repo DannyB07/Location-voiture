@@ -4,7 +4,7 @@
 
 @section('body')
 <!-- main content -->
-<main class="main main--sign" data-bg="img/bg/bg.png">
+<main class="main main--sign" data-bg="img-agence/terer.png">
     <!-- registration form -->
     <div class="sign">
         <div class="sign__content">

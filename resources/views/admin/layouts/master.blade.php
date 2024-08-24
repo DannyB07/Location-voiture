@@ -11,7 +11,7 @@
     <link href="{{ asset('dashboard/css/styles.css') }}" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ asset('lib/bootstrap/css/bootstrap.min.css') }}">
-    
+
 </head>
 
 <body>
@@ -49,6 +49,10 @@
                             Statistiques
                         </a>
                         <div class="sb-sidenav-menu-heading">Données</div>
+                        <a class="nav-link" href="{{ route('admin.agences.index') }}">
+                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                            Agences
+                        </a>
                         <a class="nav-link" href="{{ route('admin.user.index') }}">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                             Utilisateurs

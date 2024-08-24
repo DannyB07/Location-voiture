@@ -28,5 +28,6 @@ class Car extends Model
     {
         return $this->belongsTo(Marque::class);
     }
+    
 
 }

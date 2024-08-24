@@ -6,7 +6,7 @@
         <div class="header__content">
           <div class="header__logo">
             <a href="{{ route('home.index') }}">
-              <img src="{{ asset('img/logo.svg') }}" alt="">
+              <img src="{{ asset('img-agence/terer.png') }}" alt="">
             </a>
           </div>
 
@@ -22,7 +22,7 @@
                 <a href="{{ route('about.show') }}" class="header__nav-link">À propos de nous</a>
               </li>
               <li class="header__nav-item">
-                <a href="{{ route('contacts.show') }}" class="header__nav-link">Contacts</a>
+                <a href="{{ route('contacts.index') }}" class="header__nav-link">Contacts</a>
               </li>
             </ul>
           </div>

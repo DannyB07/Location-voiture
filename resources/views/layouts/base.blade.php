@@ -13,11 +13,35 @@
   <link rel="stylesheet" href="{{ asset('css/select2.min.css') }}">
   <link rel="stylesheet" href="{{ asset('css/main.css') }}">
   <link rel="stylesheet" href="{{ asset('css/cardex.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    .footer__logo {
+      text-align: center; /* Centrer le logo si nécessaire */
+    }
 
+    .footer__logo img {
+      width: 150px; /* Ajustez cette valeur selon vos besoins */
+      height: auto; /* Conserve les proportions de l'image */
+    }
+    .header__logo img{
+        width: 150px; /* Ajustez cette valeur selon vos besoins */
+        height: auto;
+    }
+    .text-bright {
+    color: #f5f5f5; /* Blanc lumineux */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Ombre pour améliorer la lisibilité */
+}
+    .sign__logo img{
+        width: 180px; /* Ajustez cette valeur selon vos besoins */
+        height: auto;
+    }
+
+
+  </style>
   <!-- Favicons -->
-  <link rel="icon" type="image/png" href="icon/favicon-32x32.png" sizes="32x32">
-  <link rel="apple-touch-icon" href="icon/favicon-32x32.png">
-  <title>Cardex – @yield('title')</title>
+  <link rel="icon" type="image/png" href="img-agence/terer.png" sizes="48x48">
+  <link rel="apple-touch-icon" href="img-agence/terer.png">
+  <title>CarFlex Agency – @yield('title')</title>
 
 </head>
 <body>

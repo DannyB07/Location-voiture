@@ -4,14 +4,14 @@
 
 @section('body')
 <!-- main content -->
-<main class="main main--sign" data-bg="img/bg/bg.png">
+<main class="main main--sign" data-bg="img-agence/terer.png">
     <!-- registration form -->
     <div class="sign">
         <div class="sign__content">
             <form action="{{ route('register.perform') }}" method="POST" class="sign__form">
                 @csrf
                 <a href="{{ route('home.index') }}" class="sign__logo">
-                    <img src="img/logo.svg" alt="">
+                    <img src="img-agence/terer.png" alt="">
                 </a>
 
                 @if ($errors->has('first_name'))
@@ -20,14 +20,14 @@
                 <div class="sign__group">
                     <input type="text" name="first_name" class="sign__input" placeholder="Nom">
                 </div>
-    
+
                 @if ($errors->has('last_name'))
                     <span class="text-danger text-center">{{ $errors->first('last_name') }}</span>
                 @endif
                 <div class="sign__group">
                     <input type="text" name="last_name" class="sign__input" placeholder="Prénom">
                 </div>
-                
+
                 @if ($errors->has('email'))
                     <span class="text-danger text-center">{{ $errors->first('email') }}</span>
                 @endif

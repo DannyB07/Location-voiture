@@ -107,7 +107,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <path d="M19.088,4.95453c-.00732-.00781-.00952-.01819-.01715-.02582s-.01819-.00995-.02606-.01733a9.97886,9.97886,0,0,0-14.08948,0c-.00787.00738-.01837.00964-.02606.01733s-.00983.018-.01715.02582a10,10,0,1,0,14.1759,0ZM12,20a7.9847,7.9847,0,0,1-6.235-3H9.78027a2.9636,2.9636,0,0,0,4.43946,0h4.01532A7.9847,7.9847,0,0,1,12,20Zm-1-5a1,1,0,1,1,1,1A1.001,1.001,0,0,1,11,15Zm8.41022.00208L19.3999,15H15a2.99507,2.99507,0,0,0-2-2.81573V9a1,1,0,0,0-2,0v3.18427A2.99507,2.99507,0,0,0,9,15H4.6001l-.01032.00208A7.93083,7.93083,0,0,1,4.06946,13H5a1,1,0,0,0,0-2H4.06946A7.95128,7.95128,0,0,1,5.68854,7.10211l.65472.65473A.99989.99989,0,1,0,7.75732,6.34277l-.65466-.65466A7.95231,7.95231,0,0,1,11,4.06946V5a1,1,0,0,0,2,0V4.06946a7.95231,7.95231,0,0,1,3.89734,1.61865l-.65466.65466a.99989.99989,0,1,0,1.41406,1.41407l.65472-.65473A7.95128,7.95128,0,0,1,19.93054,11H19a1,1,0,0,0,0,2h.93054A7.93083,7.93083,0,0,1,19.41022,15.00208Z" />
                     </svg>
-                    <span>{{ $car->kilometers_per_liter }}km / 1-litre</span>
+                    <span>{{ $car->kilometers_per_liter }}km /litre</span>
                 </li>
                 <li>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -179,7 +179,7 @@
     <!-- title -->
     <div class="col-12">
       <div class="main__title">
-        <h2>Commencez en 4 étapes simples</h2>
+        <h2>Commencez avec des étapes simples</h2>
       </div>
     </div>
     <!-- end title -->
@@ -224,7 +224,126 @@
         <p class="step1__text">Confirmez vos contrat de location et venez récuper votre véhicule</p>
       </div>
     </div>
+    <div class="col-12">
+        <div class="main__title">
+          <h2>À propos de nous</h2>
+        </div>
+      </div>
+
   </section>
   <!-- end get started -->
 </div>
+<!-- about -->
+
+
+<!-- end about -->
+
+<div class="container">
+    <!-- about us -->
+    <section class="row row--grid align-items-center">
+        <!-- Image Column -->
+        <div class="col-12 col-lg-6">
+            <div class="about__image text-center mb-4 mb-lg-0">
+                <img src="{{ asset('img-agence/1-ag.jpg') }}" alt="À propos de nous" class="img-fluid" style="max-width: 100%; height: auto;">
+            </div>
+        </div>
+        <div class="col-12 col-lg-6 d-flex align-items-start justify-content-center">
+            <div class="about__text" style="max-width: 90%; text-align: justify;">
+
+                <p>Fondée en 2024, notre entreprise est née de la volonté de faciliter la location de voitures pour les particuliers et les professionnels. Depuis nos débuts modestes, nous avons grandi pour devenir un leader dans le domaine, avec une vaste flotte de véhicules adaptés à tous les besoins.</p>
+                <p>Notre mission est de rendre la location de voitures aussi simple et transparente que possible, en offrant des services personnalisés et des solutions adaptées à chaque client.</p>
+                <p>Avec une attention constante à l'innovation et à l'excellence, nous avons introduit plusieurs services novateurs qui ont transformé la façon dont les clients interagissent avec nous. Chaque véhicule de notre flotte est méticuleusement entretenu, garantissant sécurité, confort et fiabilité pour chaque voyage.</p>
+                <p>Nous nous engageons également à adopter des pratiques durables, en introduisant des véhicules écologiques.</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+    <!-- end about us -->
+
+    <div class="container ">
+        <section class="row row--grid">
+            <!-- Titre "Nos Valeurs" -->
+            <div class="col-12 mb-4 d-flex justify-content-center">
+                <div class="main__title text-center">
+                    <h2>Nos Valeurs</h2>
+                </div>
+            </div>
+
+            <!-- Fiabilité -->
+            <div class="col-12 col-md-4 mt-4">
+                <div class="value text-center">
+                    <span class="value__icon">
+                        <i class="fas fa-shield-alt fa-3x" style="color: #3db4eb;"></i> <!-- Icône stylisée pour Fiabilité -->
+                    </span>
+                    <h3>Fiabilité</h3>
+                    <p>Nous nous engageons à fournir des services fiables à nos clients, avec une transparence totale et un respect des délais.</p>
+                </div>
+            </div>
+
+            <!-- Innovation -->
+            <div class="col-12 col-md-4 mt-4">
+                <div class="value text-center">
+                    <span class="value__icon">
+                        <i class="fas fa-lightbulb fa-3x" style="color: #3db4eb;"></i> <!-- Icône stylisée pour Innovation -->
+                    </span>
+                    <h3>Innovation</h3>
+                    <p>Nous adoptons les dernières technologies pour améliorer notre service, rendant la location de voitures plus simple et plus efficace.</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mt-4">
+                <div class="value text-center">
+                  <span class="value__icon">
+                    <i class="fas fa-headset fa-3x" style="color: #3db4eb;"></i> <!-- Icône stylisée pour Service Client -->
+                  </span>
+                  <h3>Service Client</h3>
+                  <p>Nous plaçons nos clients au cœur de tout ce que nous faisons, avec un service client exceptionnel et une attention personnalisée.</p>
+                </div>
+              </div>
+        </section>
+    </div>
+
+  </section>
+  <!-- end values -->
+</section>
+
+    <!-- team -->
+<div class="container">
+    <section class="row row--grid">
+        <!-- Titre de la section -->
+        <div class="col-12 mb-4 d-flex justify-content-center">
+            <div class="main__title text-center">
+                <h2>Rencontrez notre équipe</h2>
+            </div>
+        </div>
+
+
+        <div class="col-12 col-md-4 mt-4 d-flex justify-content-center">
+            <div class="team text-center">
+                <img src="{{ asset('img-agence/emp.jpg') }}" alt="Pierre Martin" class="img-fluid mb-3" style="max-width: 100%; height: auto;">
+                <h3 class="team__name">Daniel ADANDJI</h3>
+                <p class="team__name text-center">Directeur général de l'entreprise</p>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-4 mt-4 d-flex justify-content-center">
+            <div class="team text-center">
+                <img src="{{ asset('img-agence/gest-adm.jpg') }}" alt="Pierre Martin" class="img-fluid mb-3" style="max-width: 100%; height: auto;">
+                <h3 class="team__name">Hervé AKAKPO</h3>
+                <p class="team__name text-center">Gestionnaire</p>
+            </div>
+        </div>
+
+        <!-- Pierre Martin -->
+        <div class="col-12 col-md-4 mt-4 d-flex justify-content-center">
+            <div class="team text-center">
+                <img src="{{ asset('img-agence/mainten.jpg') }}" alt="Pierre Martin" class="img-fluid mb-3" style="max-width: 100%; height: auto;">
+                <h3 class="team__name">Pierre ALAINH</h3>
+                <p class="team__name text-center">Maintenancier</p>
+            </div>
+        </div>
+
+    </section>
+</div>
+
 @endsection

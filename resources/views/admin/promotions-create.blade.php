@@ -41,7 +41,7 @@
                             </div>
                         </div>
                         <div class="form-group row my-4">
-                            <label for="montant_reduction" class="col-sm-3 my-2 col-form-label">% Montant de la remise :</label>
+                            <label for="montant_reduction" class="col-sm-3 my-2 col-form-label"> Montant de la remise :</label>
                             <div class="col-sm-9">
                                 <input type="number" class="form-control" id="montant_reduction" name="montant_reduction" required>
                             </div>

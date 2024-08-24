@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class PromotionController extends Controller
 {
 
-  
+
     // Affiche une liste paginée des promotions
     public function index()
     {
@@ -31,6 +31,8 @@ class PromotionController extends Controller
             'montant_reduction' => 'required|numeric|min:0',
             'date_limite' => 'required|date|after:today',
             'car_id' => 'required|exists:cars,id',
+            'brand' => 'nullable|string',
+            'marque_id' => 'nullable|exists:marques,id',
         ]);
 
         // Crée la promotion sans appliquer immédiatement la réduction
@@ -39,6 +41,7 @@ class PromotionController extends Controller
             'montant_reduction' => $request->input('montant_reduction'),
             'date_limite' => $request->input('date_limite'),
             'car_id' => $request->input('car_id'),
+
         ]);
 
         return redirect()->route('admin.promotions.index')->with('success', 'Promotion créée avec succès.');

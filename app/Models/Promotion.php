@@ -14,6 +14,7 @@ class Promotion extends Model
         'montant_reduction',
         'date_limite',
         'car_id',
+        'brand'
     ];
 
 

@@ -108,7 +108,7 @@
                         </div>
                         <div class="form-group row my-4">
                             <div class="col-sm-12 text-center">
-                                <button type="submit" class="btn btn-primary">Créer</button>
+                                <button type="submit" class="btn btn-primary ">Créer</button>
                                 <button type="button" class="btn btn-secondary" onclick="window.history.back()" >Annuler</button>
                             </div>
                         </div>
