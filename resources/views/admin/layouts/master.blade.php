@@ -7,17 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="@yield('description')" />
     <meta name="author" content="@yield('author')" />
-    <title>Admin - @yield('title')</title>
+    <title>Admin @yield('title')</title>
     <link href="{{ asset('dashboard/css/styles.css') }}" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ asset('lib/bootstrap/css/bootstrap.min.css') }}">
+
+    <style>
+        .navbar-brand img{
+            width: 140px; /* Ajustez cette valeur selon vos besoins */
+            height: auto;
+        }
+      </style>
 
 </head>
 
 <body>
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <!-- Navbar Brand-->
-        <a class="navbar-brand ps-3" href="{{ route('admin.home') }}"><img src="{{ asset('img/logo-white.svg') }}" alt=""></a>
+        <a class="navbar-brand ps-3" href="{{ route('admin.home') }}"><img src="{{ asset('img-agence/terer.png') }}" alt=""></a>
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars">-NavBar-</i></button>
         <!-- Navbar Search-->
@@ -73,14 +80,15 @@
                             <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                             Promotions
                         </a>
+                        <a class="nav-link" href="{{ route('admin.avis.index') }}">
+                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                            Gestion des avis
+                        </a>
 
 
                     </div>
                 </div>
-                <div class="sb-sidenav-footer">
-                    <div class="small">Connecté en tant que:</div>
-                    {{ auth('admin')->user()->username }}
-                </div>
+                
             </nav>
         </div>
         <div id="layoutSidenav_content">

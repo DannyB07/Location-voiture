@@ -4,7 +4,7 @@
 
 @section('body')
 <!-- main content -->
-<main class="main main--sign" data-bg="img/bg/bg.png">
+<main class="main main--sign" data-bg="img-agence/terer.png">
     <!-- registration form -->
     <div class="sign">
         <div class="sign__content">
@@ -12,7 +12,7 @@
                 @csrf
                 <h2>Administration</h2>
                 <a href="{{ route('home.index') }}" class="sign__logo">
-                    <img src="{{ asset('img/logo.svg') }}" alt="">
+                    <img src="{{ asset('img-agence/terer.png') }}" alt="">
                 </a>
 
                 @if ($errors->has('username'))

@@ -8,6 +8,8 @@ use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\AgenceController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\AvisController;
+use App\Http\Controllers\HomeController;
 
 
 /*
@@ -23,6 +25,17 @@ use App\Http\Controllers\DashboardController;
 Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::get('/', 'PageController@home')->name('home.index');
 
+
+
+
+
+// Routes pour les utilisateurs authentifiés (User)
+Route::middleware(['auth'])->name('avis.')->group(function () {
+    Route::get('/mes-avis', [AvisController::class, 'indexUser'])->name('indexUser');  // Lister les avis de l'utilisateur connecté
+    Route::get('/avis/create', [AvisController::class, 'create'])->name('create');     // Afficher le formulaire de création d'un avis
+    Route::post('/avis', [AvisController::class, 'store'])->name('store');
+    Route::delete('/avis/{id}', [AvisController::class, 'destroy'])->name('destroy');               // Soumettre un nouvel avis
+});
     // Marque
 
     Route::prefix('admin')->name('admin.')->group(function () {
@@ -38,6 +51,15 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
     });
 
 
+// Routes pour les administrateurs (Admin)
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('/avis', [AvisController::class, 'index'])->name('avis.index');             // Lister les avis non approuvés pour l'administration
+    Route::patch('/avis/{id}/approuver', [AvisController::class, 'approuver'])->name('avis.approuver'); // Approuver un avis
+    Route::patch('/avis/{id}/rejeter', [AvisController::class, 'rejeter'])->name('avis.rejeter');      // Rejeter un avis
+});
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::resource('admin', AvisController::class);
+    });
 
     // Route pour afficher la liste des promotions
     Route::prefix('admin')->name('admin.')->group(function () {

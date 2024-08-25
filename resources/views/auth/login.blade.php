@@ -11,7 +11,7 @@
             <form action="{{ route('login.perform') }}" method="POST" class="sign__form">
                 @csrf
                 <a href="{{ route('home.index') }}" class="sign__logo">
-                    <img src="{{ asset('img/logo.svg') }}" alt="">
+                    <img src="{{ asset('img-agence/terer.png') }}" alt="">
                 </a>
 
                 @if ($errors->has('email'))

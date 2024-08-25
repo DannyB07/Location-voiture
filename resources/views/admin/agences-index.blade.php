@@ -54,7 +54,7 @@
 
         <div class="mb-4">
             <div>
-                <a class="btn btn-primary m-3" href="{{ route('admin.agences.create') }}" role="button"><i class="fas fa-plus shiny-icon"></i>Ajouter une agence</a>
+                <a class="btn btn-primary m-3 disabled" href="{{ route('admin.agences.create') }}" role="button"><i class="fas fa-plus shiny-icon"></i>Ajouter une agence</a>
             </div>
             <div table-responsive>
                 <table class="table table-hover">

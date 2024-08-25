@@ -16,9 +16,7 @@
             </div>
         </div>-->
         <div class="mb-4">
-            <div>
-                <a class="btn btn-primary m-3" href="{{ route('admin.user.create') }}" role="button" >Ajouter</a>
-            </div>
+            
             <div table-responsive>
                 <table class="table table-hover">
                     <thead>

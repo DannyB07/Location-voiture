@@ -174,64 +174,64 @@
 
   <!-- end cars -->
 
-  <!-- get started -->
-  <section class="row row--grid">
-    <!-- title -->
-    <div class="col-12">
-      <div class="main__title">
-        <h2>Commencez avec des étapes simples</h2>
-      </div>
-    </div>
-    <!-- end title -->
+            <!-- get started -->
+        <section class="row row--grid">
+            <!-- title -->
+            <div class="col-12">
+                <div class="main__title">
+                    <h2>Commencez avec des étapes simples</h2>
+                </div>
+            </div>
+            <!-- end title -->
 
-    <div class="col-12 col-md-6 col-xl-4">
-      <div class="step1">
-        <span class="step1__icon step1__icon--pink">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M21,10.5H20v-1a1,1,0,0,0-2,0v1H17a1,1,0,0,0,0,2h1v1a1,1,0,0,0,2,0v-1h1a1,1,0,0,0,0-2Zm-7.7,1.72A4.92,4.92,0,0,0,15,8.5a5,5,0,0,0-10,0,4.92,4.92,0,0,0,1.7,3.72A8,8,0,0,0,2,19.5a1,1,0,0,0,2,0,6,6,0,0,1,12,0,1,1,0,0,0,2,0A8,8,0,0,0,13.3,12.22ZM10,11.5a3,3,0,1,1,3-3A3,3,0,0,1,10,11.5Z" />
-          </svg>
-        </span>
-        <h3 class="step1__title">Créez un profil</h3>
-        @auth
-          <p class="step1__text">Vous avez un compte ? Parfait, visitez notre parking<br><a href="{{ route('car.index') }}">Voitures</a></p>
-        @endauth
-        @guest
-          <p class="step1__text">Pour faire une location, vous devez créer un compte<br><a href="{{ route('register.show') }}">Commencer</a></p>
-        @endguest
-      </div>
-    </div>
+            <div class="col-12 col-md-6 col-xl-4">
+                <div class="step1">
+                    <span class="step1__icon step1__icon--pink">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M21,10.5H20v-1a1,1,0,0,0-2,0v1H17a1,1,0,0,0,0,2h1v1a1,1,0,0,0,2,0v-1h1a1,1,0,0,0,0-2Zm-7.7,1.72A4.92,4.92,0,0,0,15,8.5a5,5,0,0,0-10,0,4.92,4.92,0,0,0,1.7,3.72A8,8,0,0,0,2,19.5a1,1,0,0,0,2,0,6,6,0,0,1,12,0,1,1,0,0,0,2,0A8,8,0,0,0,13.3,12.22ZM10,11.5a3,3,0,1,1,3-3A3,3,0,0,1,10,11.5Z" />
+                    </svg>
+                    </span>
+                    <h3 class="step1__title">Créez un profil</h3>
+                    @auth
+                        <p class="step1__text">Vous avez un compte ? Parfait, visitez notre parking<br><a href="{{ route('car.index') }}">Voitures</a></p>
+                    @endauth
+                    @guest
+                        <p class="step1__text">Pour faire une location, vous devez créer un compte<br><a href="{{ route('register.show') }}">Commencer</a></p>
+                    @endguest
+                </div>
+            </div>
 
-    <div class="col-12 col-md-6 col-xl-4">
-      <div class="step1">
-        <span class="step1__icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M6.62,13.08a.9.9,0,0,0-.54.54,1,1,0,0,0,1.3,1.3,1.15,1.15,0,0,0,.33-.21,1.15,1.15,0,0,0,.21-.33A.84.84,0,0,0,8,14a1.05,1.05,0,0,0-.29-.71A1,1,0,0,0,6.62,13.08Zm13.14-4L18.4,5.05a3,3,0,0,0-2.84-2H8.44A3,3,0,0,0,5.6,5.05L4.24,9.11A3,3,0,0,0,2,12v4a3,3,0,0,0,2,2.82V20a1,1,0,0,0,2,0V19H18v1a1,1,0,0,0,2,0V18.82A3,3,0,0,0,22,16V12A3,3,0,0,0,19.76,9.11ZM7.49,5.68A1,1,0,0,1,8.44,5h7.12a1,1,0,0,1,1,.68L17.61,9H6.39ZM20,16a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V12a1,1,0,0,1,1-1H19a1,1,0,0,1,1,1Zm-3.38-2.92a.9.9,0,0,0-.54.54,1,1,0,0,0,1.3,1.3.9.9,0,0,0,.54-.54A.84.84,0,0,0,18,14a1.05,1.05,0,0,0-.29-.71A1,1,0,0,0,16.62,13.08ZM13,13H11a1,1,0,0,0,0,2h2a1,1,0,0,0,0-2Z" />
-          </svg>
-        </span>
-        <h3 class="step1__title">Dîtes nous quelle voiture vous désirez</h3>
-        <p class="step1__text">Nous avons une gamme assez complète de véhicule à mettre à votre disposition</p>
-      </div>
-    </div>
+            <div class="col-12 col-md-6 col-xl-4">
+                <div class="step1">
+                    <span class="step1__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M6.62,13.08a.9.9,0,0,0-.54.54,1,1,0,0,0,1.3,1.3,1.15,1.15,0,0,0,.33-.21,1.15,1.15,0,0,0,.21-.33A.84.84,0,0,0,8,14a1.05,1.05,0,0,0-.29-.71A1,1,0,0,0,6.62,13.08Zm13.14-4L18.4,5.05a3,3,0,0,0-2.84-2H8.44A3,3,0,0,0,5.6,5.05L4.24,9.11A3,3,0,0,0,2,12v4a3,3,0,0,0,2,2.82V20a1,1,0,0,0,2,0V19H18v1a1,1,0,0,0,2,0V18.82A3,3,0,0,0,22,16V12A3,3,0,0,0,19.76,9.11ZM7.49,5.68A1,1,0,0,1,8.44,5h7.12a1,1,0,0,1,1,.68L17.61,9H6.39ZM20,16a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V12a1,1,0,0,1,1-1H19a1,1,0,0,1,1,1Zm-3.38-2.92a.9.9,0,0,0-.54.54,1,1,0,0,0,1.3,1.3.9.9,0,0,0,.54-.54A.84.84,0,0,0,18,14a1.05,1.05,0,0,0-.29-.71A1,1,0,0,0,16.62,13.08ZM13,13H11a1,1,0,0,0,0,2h2a1,1,0,0,0,0-2Z" />
+                        </svg>
+                    </span>
+                    <h3 class="step1__title">Dîtes nous quelle voiture vous désirez</h3>
+                    <p class="step1__text">Nous avons une gamme assez complète de véhicule à mettre à votre disposition</p>
+                </div>
+            </div>
 
-    <div class="col-12 col-md-6 col-xl-4">
-      <div class="step1">
-        <span class="step1__icon step1__icon--purple">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M20.71,16.71l-2.42-2.42a1,1,0,0,0-1.42,0l-3.58,3.58a1,1,0,0,0-.29.71V21a1,1,0,0,0,1,1h2.42a1,1,0,0,0,.71-.29l3.58-3.58A1,1,0,0,0,20.71,16.71ZM16,20H15V19l2.58-2.58,1,1Zm-6,0H6a1,1,0,0,1-1-1V5A1,1,0,0,1,6,4h5V7a3,3,0,0,0,3,3h3v1a1,1,0,0,0,2,0V9s0,0,0-.06a1.31,1.31,0,0,0-.06-.27l0-.09a1.07,1.07,0,0,0-.19-.28h0l-6-6h0a1.07,1.07,0,0,0-.28-.19.32.32,0,0,0-.09,0L12.06,2H6A3,3,0,0,0,3,5V19a3,3,0,0,0,3,3h4a1,1,0,0,0,0-2ZM13,5.41,15.59,8H14a1,1,0,0,1-1-1ZM8,14h6a1,1,0,0,0,0-2H8a1,1,0,0,0,0,2Zm0-4H9A1,1,0,0,0,9,8H8a1,1,0,0,0,0,2Zm2,6H8a1,1,0,0,0,0,2h2a1,1,0,0,0,0-2Z" />
-          </svg>
-        </span>
-        <h3 class="step1__title">Validez un contrat</h3>
-        <p class="step1__text">Confirmez vos contrat de location et venez récuper votre véhicule</p>
-      </div>
-    </div>
-    <div class="col-12">
-        <div class="main__title">
-          <h2>À propos de nous</h2>
-        </div>
-      </div>
+            <div class="col-12 col-md-6 col-xl-4">
+                <div class="step1">
+                    <span class="step1__icon step1__icon--purple">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M20.71,16.71l-2.42-2.42a1,1,0,0,0-1.42,0l-3.58,3.58a1,1,0,0,0-.29.71V21a1,1,0,0,0,1,1h2.42a1,1,0,0,0,.71-.29l3.58-3.58A1,1,0,0,0,20.71,16.71ZM16,20H15V19l2.58-2.58,1,1Zm-6,0H6a1,1,0,0,1-1-1V5A1,1,0,0,1,6,4h5V7a3,3,0,0,0,3,3h3v1a1,1,0,0,0,2,0V9s0,0,0-.06a1.31,1.31,0,0,0-.06-.27l0-.09a1.07,1.07,0,0,0-.19-.28h0l-6-6h0a1.07,1.07,0,0,0-.28-.19.32.32,0,0,0-.09,0L12.06,2H6A3,3,0,0,0,3,5V19a3,3,0,0,0,3,3h4a1,1,0,0,0,0-2ZM13,5.41,15.59,8H14a1,1,0,0,1-1-1ZM8,14h6a1,1,0,0,0,0-2H8a1,1,0,0,0,0,2Zm0-4H9A1,1,0,0,0,9,8H8a1,1,0,0,0,0,2Zm2,6H8a1,1,0,0,0,0,2h2a1,1,0,0,0,0-2Z" />
+                        </svg>
+                    </span>
+                    <h3 class="step1__title">Validez un contrat</h3>
+                    <p class="step1__text">Confirmez vos contrat de location et venez récuper votre véhicule</p>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="main__title">
+                <h2>À propos de nous</h2>
+                </div>
+            </div>
 
-  </section>
-  <!-- end get started -->
+        </section>
+        <!-- end get started -->
 </div>
 <!-- about -->
 
@@ -259,7 +259,7 @@
     </section>
 </div>
 
-    <!-- end about us -->
+
 
     <div class="container ">
         <section class="row row--grid">
@@ -293,13 +293,13 @@
             </div>
             <div class="col-12 col-md-4 mt-4">
                 <div class="value text-center">
-                  <span class="value__icon">
-                    <i class="fas fa-headset fa-3x" style="color: #3db4eb;"></i> <!-- Icône stylisée pour Service Client -->
-                  </span>
-                  <h3>Service Client</h3>
-                  <p>Nous plaçons nos clients au cœur de tout ce que nous faisons, avec un service client exceptionnel et une attention personnalisée.</p>
+                    <span class="value__icon">
+                        <i class="fas fa-headset fa-3x" style="color: #3db4eb;"></i> <!-- Icône stylisée pour Service Client -->
+                    </span>
+                    <h3>Service Client</h3>
+                    <p>Nous plaçons nos clients au cœur de tout ce que nous faisons, avec un service client exceptionnel et une attention personnalisée.</p>
                 </div>
-              </div>
+            </div>
         </section>
     </div>
 
@@ -307,43 +307,46 @@
   <!-- end values -->
 </section>
 
-    <!-- team -->
-<div class="container">
-    <section class="row row--grid">
-        <!-- Titre de la section -->
-        <div class="col-12 mb-4 d-flex justify-content-center">
-            <div class="main__title text-center">
-                <h2>Rencontrez notre équipe</h2>
-            </div>
-        </div>
+                        <!-- team -->
+                        <div class="container">
+                            <section class="row row--grid">
+                            <!-- Titre de la section -->
+                                <div class="col-12 mb-4 d-flex justify-content-center">
+                                    <div class="main__title text-center">
+                                        <h2>Rencontrez notre équipe</h2>
+                                    </div>
+                                </div>
 
 
-        <div class="col-12 col-md-4 mt-4 d-flex justify-content-center">
-            <div class="team text-center">
-                <img src="{{ asset('img-agence/emp.jpg') }}" alt="Pierre Martin" class="img-fluid mb-3" style="max-width: 100%; height: auto;">
-                <h3 class="team__name">Daniel ADANDJI</h3>
-                <p class="team__name text-center">Directeur général de l'entreprise</p>
-            </div>
-        </div>
+                                <div class="col-12 col-md-4 mt-4 d-flex justify-content-center">
+                                    <div class="team text-center">
+                                        <img src="{{ asset('img-agence/emp.jpg') }}" alt="Pierre Martin" class="img-fluid mb-3" style="max-width: 100%; height: auto;">
+                                        <h3 class="team__name">Daniel ADANDJI</h3>
+                                        <p class="team__name text-center">Directeur général de l'entreprise</p>
+                                    </div>
+                                </div>
 
-        <div class="col-12 col-md-4 mt-4 d-flex justify-content-center">
-            <div class="team text-center">
-                <img src="{{ asset('img-agence/gest-adm.jpg') }}" alt="Pierre Martin" class="img-fluid mb-3" style="max-width: 100%; height: auto;">
-                <h3 class="team__name">Hervé AKAKPO</h3>
-                <p class="team__name text-center">Gestionnaire</p>
-            </div>
-        </div>
+                                <div class="col-12 col-md-4 mt-4 d-flex justify-content-center">
+                                    <div class="team text-center">
+                                        <img src="{{ asset('img-agence/gest-adm.jpg') }}" alt="Pierre Martin" class="img-fluid mb-3" style="max-width: 100%; height: auto;">
+                                        <h3 class="team__name">Hervé AKAKPO</h3>
+                                        <p class="team__name text-center">Gestionnaire</p>
+                                    </div>
+                                </div>
 
-        <!-- Pierre Martin -->
-        <div class="col-12 col-md-4 mt-4 d-flex justify-content-center">
-            <div class="team text-center">
-                <img src="{{ asset('img-agence/mainten.jpg') }}" alt="Pierre Martin" class="img-fluid mb-3" style="max-width: 100%; height: auto;">
-                <h3 class="team__name">Pierre ALAINH</h3>
-                <p class="team__name text-center">Maintenancier</p>
-            </div>
-        </div>
 
-    </section>
-</div>
+                                <div class="col-12 col-md-4 mt-4 d-flex justify-content-center">
+                                    <div class="team text-center">
+                                        <img src="{{ asset('img-agence/mainten.jpg') }}" alt="Pierre Martin" class="img-fluid mb-3" style="max-width: 100%; height: auto;">
+                                        <h3 class="team__name">Pierre ALAINH</h3>
+                                        <p class="team__name text-center">Maintenancier</p>
+                                    </div>
+                                </div>
+
+
+                            </section>
+                        </div>
+
+
 
 @endsection
